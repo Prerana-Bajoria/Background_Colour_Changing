@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Colour Changer</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            background: #6495ED;
+        }
+        
+        #button {
+            height: 75px;
+            width: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <button type="button" id="button">change color</button>
+        <input placeholder=" type here" type="text" style="color:black; margin-left:580px; margin-top: 370px;">
+        <img src="https://www.google.com/search?q=doctor+wearing+mask+female&rlz=1C1CHBD_enIN917IN917&oq=doctor+wearing+mask+female&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCggCEAAYDxgWGB4yCggDEAAYDxgWGB4yCggEEAAYDxgWGB4yCAgFEAAYFhgeMggIBhAAGBYYHjIICAcQABgWGB4yCAgIEAAYFhgeMggICRAAGBYYHtIBCTEyNDAwajBqN6gCALACAA&sourceid=chrome&ie=UTF-8#imgrc=mJtuCQJ2Wwau4M"
+            alt="lady doctor" style="width:100px; height: 100px; margin-left:550 ; margin-top:200px ;">
+    </div>
+    <script>
+        let colours = ['red', 'blue', 'green', 'yellow', 'brown', '#6495ED'];
+
+        document.getElementById("button").addEventListener('click', function() {
+            console.log('colour changed');
+            // taking colours randomly
+            var randomcolour = colours[Math.floor(Math.random() * colours.length)];
+            console.log(randomcolour);
+            // var ocontainer = document.getElementsByClassName("container");
+            //random colour to the background
+            document.querySelector("body").style.background = randomcolour;
+        });
+    </script>
+
+</body>
+
+</html>
